@@ -87,11 +87,69 @@ def cuberoot(a):
         print("The cubic root of", a, "is", cadbury)
         
         cadbury(a)
+        
+        DarkChoc = 5
+        WhiteChoc = 8
+        MilkChoc = 6
+        
+        print("There is", DarkChoc, "dark choclates", WhiteChoc, "white choclates", "and", MilkChoc, "milk choclates.")
+
+studentage={"Steve":32,"Lia":28,"Vin":45,"Katie":48}
+studentage
+
+studentlist=[['steve',32, 'M'] ,["lia",28,"F"],["vin",45,"M"], ["Katie",38, "F"]]
+studentlist
+
+import pandas    
+dir(pandas)    
     
-    
-    
-    
-    
-    
-    
-    
+studentdf=pandas.DataFrame(studentlist,columns=("Name","Age","Gender"))
+studentdf
+
+studentdf["Name"]
+studentdf["Age"]
+studentdf["Gender"]
+
+import pandas
+dir(pandas)
+
+chocbox=[["milk",5],["dark",6],["white",8]]
+
+chocboxdf= pandas.DataFrame(chocbox,columns=("Choclate","Quantity"))
+print (chocboxdf)
+
+chocboxdf["Choclate"]
+chocboxdf["Quantity"]
+
+studentlist = [["steve",32,"m"],["lia",28,"f"], ["vin",45,"m"], ["katie",38,"f"]]
+studentlist
+
+import pandas
+
+studentdf = pandas.DataFrame(studentlist,columns=("name", "age", "gender"))
+studentdf
+
+studentdf2= pandas.DataFrame(studentlist,columns=("name", "age", "gender"),index=["1","2","3","4"])
+studentdf2
+
+import plotly
+dir(plotly)
+from plotly.offline import plot
+import plotly.graph_objs as go  
+
+studentbar=go.Bar(x=studentdf["name"],y=studentdf["age"]) 
+plot([studentbar])
+
+import plotly
+from plotly.offline import plot
+import plotly.ggraph_objs as go
+
+chocbar =go.Bar(x=chocboxdf["Choclate"],y=chocboxdf["Quantity"])
+plot([chocbar])
+
+titles = go.Layout(title = "Number of Choclates by type")
+
+chocbar =go.Bar(x=chocboxdf["Choclate"],y=chocboxdf["Quantity"])
+
+fig = go.Figure(data=[chocbar], layout=titles)
+plot(fig)
